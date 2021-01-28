@@ -1,6 +1,6 @@
 import os
 
-def changelanguage(route):
+def changelanguage(path):
     print("(1) American")
     print("(2) French")
     print("(3) Italian")
@@ -13,7 +13,7 @@ def changelanguage(route):
     print("(10) Chinese")
     print("(11) Mexican")
     print("(12) Korean")
-    language = input("Type the number(language) : ")
+    language = input("Choose a language (Type the number) : ")
 
     if language == "1":
         contents = "-uilanguage american"
@@ -42,6 +42,28 @@ def changelanguage(route):
     else:
         print("Error, type the number again")
 
-    f = open("%s/commandline.txt" % route, 'w+')
+    f = open("%s/commandline.txt" % path, 'w+')
     f.write(contents)
     f.close()
+
+
+if os.path.exists("history.txt"):
+    with open('history.txt', 'r') as f:
+        gtapath = f.read()
+        changelanguage(gtapath)
+
+else:
+    while True:
+        gtapath = input("Copy & Paste or Type GTA V folder path : ")
+
+        try:
+            file_list = os.listdir(gtapath)
+
+            if "GTA5.exe" in file_list:
+                changelanguage(gtapath)
+                history = open("history.txt", 'w+')
+                history.write(gtapath)
+                history.close()
+                break
+        except:
+            print("Type the GTA V folder path again")
