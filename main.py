@@ -1,5 +1,18 @@
 import os
 
+def pathinput():
+    while True:
+        gtapath = input("Copy & Paste or Type GTA V folder path : ")
+
+        if os.path.exists(gtapath + "\GTA5.exe"):
+            history = open("gtapath.txt", 'w+')
+            history.write(gtapath)
+            history.close()
+            changelanguage(gtapath)
+            break
+        else:
+            print("Type the GTA V folder path again")
+
 def changelanguage(path):
     print("(1) American")
     print("(2) French")
@@ -11,8 +24,9 @@ def changelanguage(path):
     print("(8) Polish")
     print("(9) Portuguese")
     print("(10) Chinese")
-    print("(11) Mexican")
-    print("(12) Korean")
+    print("(11) Simplified Chinese")
+    print("(12) Mexican")
+    print("(13) Korean")
     language = input("Choose a language (Type the number) : ")
 
     if language == "1":
@@ -36,8 +50,10 @@ def changelanguage(path):
     elif language == "10":
         contents = "-uilanguage chinese"
     elif language == "11":
-        contents = "-uilanguage mexican"
+        contents = "-uilanguage chinesesimp"
     elif language == "12":
+        contents = "-uilanguage mexican"
+    elif language == "13":
         contents = "-uilanguage korean"
     else:
         print("Error, type the number again")
@@ -50,20 +66,10 @@ def changelanguage(path):
 if os.path.exists("gtapath.txt"):
     with open('gtapath.txt', 'r') as f:
         gtapath = f.read()
-        changelanguage(gtapath)
-
+        if os.path.exists(gtapath + "\GTA5.exe"):
+            changelanguage(gtapath)
+        else:
+            pathinput()
+                    
 else:
-    while True:
-        gtapath = input("Copy & Paste or Type GTA V folder path : ")
-
-        try:
-            file_list = os.listdir(gtapath)
-
-            if "GTA5.exe" in file_list:
-                changelanguage(gtapath)
-                history = open("gtapath.txt", 'w+')
-                history.write(gtapath)
-                history.close()
-                break
-        except:
-            print("Type the GTA V folder path again")
+    pathinput()

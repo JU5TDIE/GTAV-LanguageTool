@@ -31,5 +31,6 @@ There are 3 gaming platform for GTA V: Steam, Epic Games, Rockstar. If you didn'
 - (8) Polish
 - (9) Portuguese
 - (10) Chinese
-- (11) Mexican
-- (12) Korean
+- (11) Simplified Chinese
+- (12) Mexican
+- (13) Korean
