@@ -47,8 +47,8 @@ def changelanguage(path):
     f.close()
 
 
-if os.path.exists("history.txt"):
-    with open('history.txt', 'r') as f:
+if os.path.exists("gtapath.txt"):
+    with open('gtapath.txt', 'r') as f:
         gtapath = f.read()
         changelanguage(gtapath)
 
@@ -61,7 +61,7 @@ else:
 
             if "GTA5.exe" in file_list:
                 changelanguage(gtapath)
-                history = open("history.txt", 'w+')
+                history = open("gtapath.txt", 'w+')
                 history.write(gtapath)
                 history.close()
                 break

@@ -4,7 +4,7 @@ It changes GTA V language by creating or editing "commandline.txt" in GTA V fold
 ## Features
 - Easy to change GTA V language
 - CLI (Command Line Interface)
-- The GTA V folder path value will be saved in the local storage as "history.txt" (Since "history.txt" is saved in local storage, you don't have to copy & paste or type GTA V folder path again. If you want to reset or change the path value, you can delete or edit "history.txt")
+- The GTA V folder path value will be saved in the local storage as "gtapath.txt" (Since "gtapath.txt" is saved in local storage, you don't have to copy & paste or type GTA V folder path again. If you want to reset or change the path value, you can delete or edit "gtapath.txt")
 
 ## Used Modules
 - OS
